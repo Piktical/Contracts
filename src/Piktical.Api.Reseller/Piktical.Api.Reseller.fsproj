@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Piktical.Api.Reseller</AssemblyName>
-    <Authors>Rob Clother</Authors>
+    <Authors>Piktical Ltd</Authors>
     <Company>Piktical Ltd</Company>
     <Product>Piktical Reseller API</Product>
     <PackageProjectUrl>https://github.com/Piktical/piktical-api-contracts</PackageProjectUrl>

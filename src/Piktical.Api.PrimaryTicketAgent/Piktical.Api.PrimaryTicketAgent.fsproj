@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <AssemblyName>Piktical.Api.PrimaryTicketAgent</AssemblyName>
-    <Authors>Rob Clother</Authors>
+    <Authors>Piktical Ltd</Authors>
     <Company>Piktical Ltd</Company>
     <Product>Piktical Primary Ticket Agent API</Product>
     <PackageProjectUrl>https://github.com/Piktical/piktical-api-contracts</PackageProjectUrl>
