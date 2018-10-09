@@ -7,6 +7,9 @@
     <Company>Piktical Ltd</Company>
     <Product>Piktical Event Security API</Product>
     <PackageProjectUrl>https://github.com/Piktical/piktical-api-contracts</PackageProjectUrl>
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <PackageIconUrl>https://enceladusdatalive.blob.core.windows.net/assets/piktical_icon.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/Piktical/piktical-api-contracts</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
