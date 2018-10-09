@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Piktical.Api.EventSecurity</AssemblyName>
+    <Authors>Rob Clother</Authors>
+    <Company>Piktical Ltd</Company>
+    <Product>Piktical Event Security API</Product>
+    <PackageProjectUrl>https://github.com/Piktical/piktical-api-contracts</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
