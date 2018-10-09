@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <AssemblyName>Piktical.Api.PrimaryTicketAgent</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Domain.fs" />
+    <Compile Include="Commands.fs" />
+    <Compile Include="Events.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NodaMoney" Version="1.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Piktical.Api.Core\Piktical.Api.Core.fsproj" />
+  </ItemGroup>
+
+</Project>
