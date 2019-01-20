@@ -12,4 +12,3 @@ module Domain =
         ConfirmedUtc: DateTimeOffset
         OwnerId: Guid
     }
-

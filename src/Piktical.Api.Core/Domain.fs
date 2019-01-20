@@ -114,6 +114,7 @@ module Domain =
 
     type Ticket = {
         TicketId: Guid
+        VerificationEnabled: EnableVerification
         Type: PriceType
         Band: PriceBand
         FaceValue: Money
