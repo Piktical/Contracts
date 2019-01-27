@@ -9,4 +9,3 @@ module Events =
         UploadedById: Guid
         Order: Order
     }
-

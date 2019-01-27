@@ -66,10 +66,9 @@ module Domain =
     [<StructuralEquality; NoComparison>]
     type EventOccurrence = {
         OccurrenceId: Guid
-        AccessControl: AccessControl
         VenueId: Guid
+        AccessControl: AccessControl
         PublicKey: string
-        EnableVerification: DateTimeOffset
         StartTime: DateTimeOffset
         DoorsOpen: DateTimeOffset
         Duration: TimeSpan
@@ -123,3 +122,5 @@ module Domain =
         Seat: Seat
         TermsAndConditions: Uri
     }
+
+    type PikticalUser = | PikticalId of string

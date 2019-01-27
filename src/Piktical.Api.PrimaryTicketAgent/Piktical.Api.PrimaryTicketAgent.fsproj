@@ -26,4 +26,8 @@
     <ProjectReference Include="..\Piktical.Api.Core\Piktical.Api.Core.fsproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="4.6.0" />
+  </ItemGroup>
+
 </Project>

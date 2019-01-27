@@ -10,5 +10,5 @@ module Domain =
         OwnerEnrolmentId: Guid option
         Tickets: Ticket[]
         ConfirmedUtc: DateTimeOffset
-        OwnerId: Guid
+        Owner: PikticalUser
     }

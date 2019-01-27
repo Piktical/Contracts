@@ -12,13 +12,13 @@ module Commands =
     type CreateOrder = {
         OrderNumber: string
         Tickets: Ticket[]
-        OwnerId: Guid
+        Owner: PikticalUser
     }
 
     type UpdateOrder = {
         OrderNumber: string
         Ticket: Ticket[]
-        OwnerId: Guid
+        Owner: PikticalUser
     }
 
     type CancelBookings = {
@@ -37,4 +37,3 @@ module Commands =
     type SellTicket = {
         ResellerId: Guid
     }
-
