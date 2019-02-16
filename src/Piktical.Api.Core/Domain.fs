@@ -1,10 +1,17 @@
 namespace Piktical.Api.Core
 
+
 module Domain =
     open System
     open GeographicLib
     open ISO3166
     open NodaMoney
+
+    module TransferRules =
+        let [<Literal>] Anyone = "TransferToAnyone"
+        let [<Literal>] FriendsAndFamilyOnly = "FriendsAndFamilyOnly"
+        let [<Literal>] InnerCircleOnly = "InnerCircleOnly"
+        let [<Literal>] NotTransferable = "NotTransferable"
 
     [<StructuralEquality; NoComparison>]
     type CivicAddress = {
@@ -67,6 +74,7 @@ module Domain =
     type EventOccurrence = {
         OccurrenceId: Guid
         VenueId: Guid
+        TransferRule: string
         AccessControl: AccessControl
         PublicKey: string
         StartTime: DateTimeOffset
@@ -97,6 +105,7 @@ module Domain =
         | Reserved of ReservedSeat
 
     type EnableVerification =
+        | Never
         | DoorsOpen
         | BeforeDoorsOpen of TimeSpan
         | AtTime of DateTimeOffset
@@ -114,6 +123,7 @@ module Domain =
     type Ticket = {
         TicketId: Guid
         VerificationEnabled: EnableVerification
+        TransferRule: string option
         Type: PriceType
         Band: PriceBand
         FaceValue: Money
