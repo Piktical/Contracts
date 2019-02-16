@@ -290,7 +290,6 @@ module Iso3166 =
             Former { Iso31661Alpha3Code = "YUG"; Iso31661Alpha2Code = "YU"; Iso31663Code = "YUCS" }
             Former { Iso31661Alpha3Code = "ZAR"; Iso31661Alpha2Code = "ZR"; Iso31663Code = "ZRCD" }
         |] 
-        
     let CountriesByIso31661Alpha3Code = AllCountries |> Array.map (fun c -> (c.Alpha3Code(), c)) |> dict
     let CountriesByIso31661Alpha2Code = AllCountries |> Array.map (fun c -> (c.Alpha2Code(), c)) |> dict
 
@@ -300,7 +299,7 @@ module Domain =
     open Iso3166
     open NodaMoney
 
-    module TransferRules =
+    module TransferRuleCodes =
         let [<Literal>] Anyone = "TransferToAnyone"
         let [<Literal>] FriendsAndFamilyOnly = "FriendsAndFamilyOnly"
         let [<Literal>] InnerCircleOnly = "InnerCircleOnly"
