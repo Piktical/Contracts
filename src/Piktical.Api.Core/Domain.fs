@@ -294,11 +294,10 @@ module Iso3166 =
     let CountriesByIso31661Alpha3Code = AllCountries |> Array.map (fun c -> (c.Alpha3Code(), c)) |> dict
     let CountriesByIso31661Alpha2Code = AllCountries |> Array.map (fun c -> (c.Alpha2Code(), c)) |> dict
 
-
 module Domain =
     open System
     open GeographicLib
-    open ISO3166
+    open Iso3166
     open NodaMoney
 
     module TransferRules =
