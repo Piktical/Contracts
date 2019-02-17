@@ -386,6 +386,27 @@ module Domain =
         | RowSeat of string * string
         | BlockRowSeat of string * string * string
         | SectionBlockRowSeat of string * string * string * string
+        member this.GetSeatNumber() =
+            match this with
+            | SeatNumber number -> number
+            | RowSeat (_, number) -> number
+            | BlockRowSeat (_, _, number) -> number
+            | SectionBlockRowSeat (_, _, _, number) -> number
+        member this.GetRow() =
+            match this with
+            | RowSeat (row, _) -> Some row
+            | BlockRowSeat (_, row, _) -> Some row
+            | SectionBlockRowSeat (_, _, row, _) -> Some row
+            | _ -> None
+        member this.GetBlock() =
+            match this with
+            | BlockRowSeat (block, _, _) -> Some block
+            | SectionBlockRowSeat (_, block, _, _) -> Some block
+            | _ -> None
+        member this.GetSection() =
+            match this with
+            | SectionBlockRowSeat (section, _, _, _) -> Some section
+            | _ -> None
 
     type Reseller = {
         ResellerId: Guid
