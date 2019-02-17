@@ -429,7 +429,7 @@ module Domain =
         | AtTime of DateTimeOffset
 
     type PriceType = {
-        PriceTypeIdentifier: Guid
+        PriceTypeIdentifier: string
         PriceTypeDescription: string
     }
 
