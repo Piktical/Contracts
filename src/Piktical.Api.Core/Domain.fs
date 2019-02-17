@@ -386,7 +386,8 @@ module Domain =
         | RowSeat of string * string
         | BlockRowSeat of string * string * string
         | SectionBlockRowSeat of string * string * string * string
-        member this.SeatNumber() =
+        member this.Number() =
+            match this with
             | SeatNumber number -> number
             | RowSeat (_, number) -> number
             | BlockRowSeat (_, _, number) -> number
