@@ -25,7 +25,7 @@ module Commands =
     }
 
     type CreateEventOccurrence = {
-        Name: EventOccurrenceName
+        Profile: EventOccurrenceProfile
         VenueId: Guid
         EventId: Guid
         AccessControl: AccessControl

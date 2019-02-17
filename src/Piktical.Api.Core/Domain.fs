@@ -334,17 +334,22 @@ module Domain =
     }
 
     [<StructuralEquality; NoComparison>]
-    type Event = {
-        EventId: Guid
+    type EventProfile = {
         Name: string
-        OneLineSummary: string
+        OneLineSummary: string option
         ImageUrl: string option
     }
 
     [<StructuralEquality; NoComparison>]
-    type EventOccurrenceName =
-        | Inherited
-        | CustomName of string
+    type Event = {
+        EventId: Guid
+        Profile: EventProfile
+    }
+
+    [<StructuralEquality; NoComparison>]
+    type EventOccurrenceProfile =
+        | InheritedProfile
+        | CustomProfile of EventProfile
 
     type BarcodeDisplayType = 
         | QrCode
@@ -373,7 +378,7 @@ module Domain =
         DoorsOpen: DateTimeOffset
         Duration: TimeSpan
         Event: Event
-        Name: EventOccurrenceName
+        Profile: EventOccurrenceProfile
     }
 
     type SeatLocation = 
