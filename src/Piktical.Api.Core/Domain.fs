@@ -386,8 +386,7 @@ module Domain =
         | RowSeat of string * string
         | BlockRowSeat of string * string * string
         | SectionBlockRowSeat of string * string * string * string
-        member this.GetSeatNumber() =
-            match this with
+        member this.SeatNumber() =
             | SeatNumber number -> number
             | RowSeat (_, number) -> number
             | BlockRowSeat (_, _, number) -> number
@@ -408,6 +407,11 @@ module Domain =
             | SectionBlockRowSeat (section, _, _, _) -> Some section
             | _ -> None
 
+    type ReservedSeat = {
+        Description: string option
+        Location: SeatLocation
+    }
+
     type Reseller = {
         ResellerId: Guid
         ResellerName: string
@@ -415,7 +419,7 @@ module Domain =
 
     type Seat = 
         | Unreserved
-        | Reserved of SeatLocation
+        | Reserved of ReservedSeat
 
     type EnableVerification =
         | Never
