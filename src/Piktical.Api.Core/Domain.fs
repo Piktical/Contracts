@@ -387,11 +387,6 @@ module Domain =
         | BlockRowSeat of string * string * string
         | SectionBlockRowSeat of string * string * string * string
 
-    type ReservedSeat = {
-        Description: string option
-        Location: SeatLocation
-    }
-
     type Reseller = {
         ResellerId: Guid
         ResellerName: string
@@ -399,7 +394,7 @@ module Domain =
 
     type Seat = 
         | Unreserved
-        | Reserved of ReservedSeat
+        | Reserved of SeatLocation
 
     type EnableVerification =
         | Never
