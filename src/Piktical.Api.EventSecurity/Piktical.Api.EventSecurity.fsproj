@@ -13,7 +13,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Domain.fs" />
+    <Compile Include="Commands.fs" />
+    <Compile Include="Events.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Piktical.Api.Core\Piktical.Api.Core.fsproj" />
   </ItemGroup>
 
   <ItemGroup>
