@@ -419,6 +419,7 @@ module Domain =
 
     type Ticket = {
         TicketId: Guid
+        EventOccurrenceId: Guid
         VerificationEnabled: EnableVerification
         TransferRule: string option
         Type: PriceType
