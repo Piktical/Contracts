@@ -8,7 +8,7 @@ module Domain =
         OrderId: Guid
         OrderNumber: string
         OwnerEnrolmentId: Guid option
-        Tickets: Ticket[]
+        Tickets: OrderedTicket[]
         ConfirmedUtc: DateTimeOffset
         Owner: PikticalUser
     }

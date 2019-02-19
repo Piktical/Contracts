@@ -452,4 +452,32 @@ module Domain =
         TermsAndConditions: Uri
     }
 
+    type TicketResale = {
+        ResaleId: Guid
+        ResellerId: Guid
+        ResoldUtc: DateTime option
+    }
+
+    type TicketReturn = {
+        ReturnId: Guid
+        ReturnedUtc: DateTime
+    }
+
+    type TicketTransfer = {
+        TransferId: Guid
+        RecipientId: Guid
+        TransferredUtc: DateTime
+    }
+
+    type OrderedTicketStatus = 
+        | Purchased
+        | Resold of TicketResale
+        | Returned of TicketReturn
+        | Transferred of TicketTransfer
+
+    type OrderedTicket = {
+        Ticket: Ticket
+        Status: OrderedTicketStatus
+    }
+
     type PikticalUser = | PikticalId of string
