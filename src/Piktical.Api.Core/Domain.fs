@@ -470,6 +470,7 @@ module Domain =
         TicketOrderId: Guid
         RecipientId: Guid
         TransferredUtc: DateTime
+        RevokedUtc: DateTime option
     }
 
     type OrderedTicketStatus = 
