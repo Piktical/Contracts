@@ -454,17 +454,20 @@ module Domain =
 
     type TicketResale = {
         ResaleId: Guid
+        TicketOrderId: Guid
         ResellerId: Guid
         ResoldUtc: DateTime option
     }
 
     type TicketReturn = {
         ReturnId: Guid
+        TicketOrderId: Guid
         ReturnedUtc: DateTime
     }
 
     type TicketTransfer = {
         TransferId: Guid
+        TicketOrderId: Guid
         RecipientId: Guid
         TransferredUtc: DateTime
     }
@@ -476,6 +479,7 @@ module Domain =
         | Transferred of TicketTransfer
 
     type OrderedTicket = {
+        TicketOrderId: Guid
         Ticket: Ticket
         Status: OrderedTicketStatus
     }
