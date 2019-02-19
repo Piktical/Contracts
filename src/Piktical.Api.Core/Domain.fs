@@ -456,7 +456,7 @@ module Domain =
         ResaleId: Guid
         TicketOrderId: Guid
         ResellerId: Guid
-        ResoldUtc: DateTime option
+        ResoldUtc: DateTime
     }
 
     type TicketReturn = {
