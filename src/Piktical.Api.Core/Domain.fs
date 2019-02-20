@@ -454,14 +454,12 @@ module Domain =
 
     type TicketResale = {
         ResaleId: Guid
-        TicketOrderId: Guid
         ResellerId: Guid
         ResoldUtc: DateTime
     }
 
     type TicketReturn = {
         ReturnId: Guid
-        TicketOrderId: Guid
         ReturnedUtc: DateTime
     }
 
