@@ -6,8 +6,7 @@ module Domain =
 
     type ManualRegistration = {
         RegistrationId: Guid
-        TicketId: Guid
-        HolderId: Guid
+        EntranceId: Guid
         ImageUrl: string
     }
 
