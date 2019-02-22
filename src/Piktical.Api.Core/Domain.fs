@@ -368,18 +368,23 @@ module Domain =
         | BarCode of ThirdPartyBarcode
 
     [<StructuralEquality; NoComparison>]
-    type EventOccurrence = {
-        OccurrenceId: Guid
-        VenueId: Guid
-        TransferRule: string
-        AccessControl: AccessControl
-        PublicKey: string
-        StartTime: DateTimeOffset
-        DoorsOpen: DateTimeOffset
-        Duration: TimeSpan
-        Event: Event
-        Profile: EventOccurrenceProfile
-    }
+    type EventOccurrence = 
+        {
+            OccurrenceId: Guid
+            VenueId: Guid
+            TransferRule: string
+            AccessControl: AccessControl
+            PublicKey: string
+            StartTime: DateTimeOffset
+            DoorsOpen: DateTimeOffset
+            Duration: TimeSpan
+            Event: Event
+            Profile: EventOccurrenceProfile
+        }
+        member this.GetProfile() =
+            match this.Profile with
+            | InheritedProfile -> this.Event.Profile
+            | CustomProfile profile -> profile
 
     type SeatLocation = 
         | SeatNumber of string
