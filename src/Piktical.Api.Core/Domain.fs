@@ -299,12 +299,6 @@ module Domain =
     open Iso3166
     open NodaMoney
 
-    module TransferRuleCodes =
-        let [<Literal>] Anyone = "TransferToAnyone"
-        let [<Literal>] FriendsAndFamilyOnly = "FriendsAndFamilyOnly"
-        let [<Literal>] InnerCircleOnly = "InnerCircleOnly"
-        let [<Literal>] NotTransferable = "NotTransferable"
-
     [<StructuralEquality; NoComparison>]
     type CivicAddress = {
         AddressId: Guid
@@ -367,12 +361,23 @@ module Domain =
         | ProvidedByPikticalApp
         | BarCode of ThirdPartyBarcode
 
+    type TransferRule =
+        | TransferToAnyone
+        | TransferToFriendsAndFamilyOnly
+        | TransferToInnerCircleOnly
+        | NotTransferable
+
+    type TransferRevocationRule =
+        | CanRevokeBeforeStartTime of TimeSpan
+        | CannotRevoke
+
     [<StructuralEquality; NoComparison>]
     type EventOccurrence = 
         {
             OccurrenceId: Guid
             VenueId: Guid
-            TransferRule: string
+            TransferRule: TransferRule
+            TransferRevocationRule: TransferRevocationRule
             AccessControl: AccessControl
             PublicKey: string
             StartTime: DateTimeOffset
@@ -447,7 +452,8 @@ module Domain =
         TicketId: Guid
         EventOccurrenceId: Guid
         VerificationEnabled: EnableVerification
-        TransferRule: string option
+        TransferRule: TransferRule option
+        TransferRevocationRule: TransferRevocationRule option
         Type: PriceType
         Band: PriceBand
         FaceValue: Money
