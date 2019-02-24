@@ -403,7 +403,6 @@ module Domain =
             DoorsOpen: DateTimeOffset
             Duration: TimeSpan
             Event: Event
-            Prices: TicketPrice[]
             Profile: EventOccurrenceProfile
         }
         member this.GetProfile() =
