@@ -371,6 +371,25 @@ module Domain =
         | CanRevokeBeforeStartTime of TimeSpan
         | CannotRevoke
 
+    type PriceType = {
+        PriceTypeId: Guid
+        PriceTypeIdentifier: string
+        PriceTypeDescription: string
+    }
+
+    type PriceBand = {
+        PriceBandId: Guid
+        PriceBandIdentifier: string
+        PriceBandDescription: string
+    }
+
+    type TicketPrice = {
+        PriceId: Guid
+        Type: PriceType
+        Band: PriceBand
+        FaceValue: Money
+    }
+
     [<StructuralEquality; NoComparison>]
     type EventOccurrence = 
         {
@@ -384,6 +403,7 @@ module Domain =
             DoorsOpen: DateTimeOffset
             Duration: TimeSpan
             Event: Event
+            Prices: TicketPrice[]
             Profile: EventOccurrenceProfile
         }
         member this.GetProfile() =
@@ -438,25 +458,13 @@ module Domain =
         | BeforeDoorsOpen of TimeSpan
         | AtTime of DateTimeOffset
 
-    type PriceType = {
-        PriceTypeIdentifier: string
-        PriceTypeDescription: string
-    }
-
-    type PriceBand = {
-        PriceBandIdentifier: string
-        PriceBandDescription: string
-    }
-
     type Ticket = {
         TicketId: Guid
         EventOccurrenceId: Guid
         VerificationEnabled: EnableVerification
         TransferRule: TransferRule option
         TransferRevocationRule: TransferRevocationRule option
-        Type: PriceType
-        Band: PriceBand
-        FaceValue: Money
+        Price: TicketPrice
         TicketIdentifier: string
         TicketDescription: string option
         Seat: Seat
