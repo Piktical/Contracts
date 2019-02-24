@@ -478,6 +478,7 @@ module Domain =
         TransferId: Guid
         TicketOrderId: Guid
         RecipientId: Guid
+        RecipientEnrolmentId: Guid
         TransferredUtc: DateTime
         RevokedUtc: DateTime option
     }
