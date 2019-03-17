@@ -484,6 +484,7 @@ module Domain =
     type TicketTransfer = {
         TransferId: Guid
         TicketOrderId: Guid
+        SenderId: Guid
         RecipientId: Guid
         RecipientEnrolmentId: Guid
         TransferredUtc: DateTime
