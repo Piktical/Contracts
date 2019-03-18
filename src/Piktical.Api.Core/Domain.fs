@@ -481,6 +481,10 @@ module Domain =
         ReturnedUtc: DateTime
     }
 
+    type TicketTransferCancellation =
+    | TransferRevokedUtc of DateTime
+    | TransferGivenBackUtc of DateTime
+
     type TicketTransfer = {
         TransferId: Guid
         TicketOrderId: Guid
@@ -488,14 +492,14 @@ module Domain =
         RecipientId: Guid
         RecipientEnrolmentId: Guid
         TransferredUtc: DateTime
-        RevokedUtc: DateTime option
+        RevokedUtc: TicketTransferCancellation option
     }
 
     type OrderedTicketStatus = 
-        | Purchased
-        | Resold of TicketResale
-        | Returned of TicketReturn
-        | Transferred of TicketTransfer
+    | Purchased
+    | Resold of TicketResale
+    | Returned of TicketReturn
+    | Transferred of TicketTransfer
 
     type OrderedTicket = {
         TicketOrderId: Guid
