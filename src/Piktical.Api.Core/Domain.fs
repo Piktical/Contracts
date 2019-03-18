@@ -492,7 +492,7 @@ module Domain =
         RecipientId: Guid
         RecipientEnrolmentId: Guid
         TransferredUtc: DateTime
-        RevokedUtc: TicketTransferCancellation option
+        Cancelled: TicketTransferCancellation option
     }
 
     type OrderedTicketStatus = 
