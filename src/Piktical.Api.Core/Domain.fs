@@ -519,6 +519,6 @@ module Domain =
 
     type SoldBy =
     | SoldByAgent of TicketAgentProfile
-    | SoleByReseller of ResellerProfile
+    | SoldByReseller of ResellerProfile
 
     type PikticalUser = | PikticalId of string
