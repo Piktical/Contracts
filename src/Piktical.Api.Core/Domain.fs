@@ -507,4 +507,18 @@ module Domain =
         Status: OrderedTicketStatus
     }
 
+    type TicketAgentProfile = {
+        PrimaryTicketAgentId: Guid
+        Name: string
+    }
+
+    type ResellerProfile = {
+        ResellerId: Guid
+        Name: string
+    }
+
+    type SoldBy =
+    | SoldByAgent of TicketAgentProfile
+    | SoleByReseller of ResellerProfile
+
     type PikticalUser = | PikticalId of string

@@ -11,4 +11,5 @@ module Domain =
         Tickets: OrderedTicket[]
         ConfirmedUtc: DateTimeOffset
         Owner: PikticalUser
+        SellerProfile: SoldBy
     }
