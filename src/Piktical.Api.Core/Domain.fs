@@ -345,6 +345,19 @@ module Domain =
         | InheritedProfile
         | CustomProfile of EventProfile
 
+    [<StructuralEquality; NoComparison>]
+    type ClientApp = {
+        DisplayName: string
+        ContactEmail: string
+        AudienceUri: Uri
+    }
+
+    [<StructuralEquality; NoComparison>]
+    type ClientCredentials = {
+        ClientId: string
+        ClientSecret: string
+    }
+
     type BarcodeDisplayType = 
         | QrCode
         | Code128
