@@ -347,6 +347,7 @@ module Domain =
 
     [<StructuralEquality; NoComparison>]
     type ClientApp = {
+        ClientId: string
         DisplayName: string
         ContactEmail: string
         AudienceUri: Uri
