@@ -337,6 +337,7 @@ module Domain =
     [<StructuralEquality; NoComparison>]
     type Event = {
         EventId: Guid
+        OrganiserId: Guid
         Profile: EventProfile
     }
 
