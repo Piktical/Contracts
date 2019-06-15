@@ -346,12 +346,33 @@ module Domain =
         | InheritedProfile
         | CustomProfile of EventProfile
 
+    type EventOrganiser = {
+        OrganiserId: Guid
+        Name: string
+        Logo: string option
+    }
+
+    type TicketAgent = {
+        AgentId: Guid
+        Name: string
+        Logo: string option
+    }
+
+    type Reseller = {
+        ResellerId: Guid
+        Name: string
+        Logo: string option
+    }
+
     [<StructuralEquality; NoComparison>]
     type ClientApp = {
         ClientId: string
         DisplayName: string
         ContactEmail: string
         AudienceUri: Uri
+        EventOrganiser: EventOrganiser option
+        TicketAgent: TicketAgent option
+        Reseller: Reseller option
     }
 
     [<StructuralEquality; NoComparison>]
@@ -455,11 +476,6 @@ module Domain =
     type ReservedSeat = {
         Description: string option
         Location: SeatLocation
-    }
-
-    type Reseller = {
-        ResellerId: Guid
-        ResellerName: string
     }
 
     type Seat = 
