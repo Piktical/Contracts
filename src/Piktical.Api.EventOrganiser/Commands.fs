@@ -33,3 +33,23 @@ module Commands =
         DoorsOpen: DateTimeOffset
         Duration: TimeSpan
     }
+
+    type CreateTicket = {
+        TicketIdentifier: string
+        TicketDescription: string option
+        Seat: Seat
+    }
+
+    type CreateTicketBand = {
+        VerificationEnabled: EnableVerification
+        TransferRule: TransferRule option
+        TransferRevocationRule: TransferRevocationRule option
+        Price: TicketPrice
+        Tickets: CreateTicket[]
+        TermsAndConditions: Uri
+    }
+
+    type ReleaseTickets = {
+        EventOccurrenceId: Guid
+        TicketBands: CreateTicketBand[]
+    }

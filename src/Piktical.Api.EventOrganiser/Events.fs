@@ -19,3 +19,8 @@ module Events =
         TimestampUtc: DateTime
         EventOccurrence: EventOccurrence
     }
+
+    type TicketsReleased = {
+        TimeStampUtc: DateTime
+        ReleaseTickets: Ticket[]
+    }
