@@ -346,18 +346,21 @@ module Domain =
         | InheritedProfile
         | CustomProfile of EventProfile
 
+    [<StructuralEquality; NoComparison>]
     type EventOrganiser = {
         OrganiserId: Guid
         Name: string
         Logo: string option
     }
 
+    [<StructuralEquality; NoComparison>]
     type TicketAgent = {
         AgentId: Guid
         Name: string
         Logo: string option
     }
 
+    [<StructuralEquality; NoComparison>]
     type Reseller = {
         ResellerId: Guid
         Name: string
@@ -427,24 +430,19 @@ module Domain =
     }
 
     [<StructuralEquality; NoComparison>]
-    type EventOccurrence = 
-        {
-            OccurrenceId: Guid
-            VenueId: Guid
-            TransferRule: TransferRule
-            TransferRevocationRule: TransferRevocationRule
-            AccessControl: AccessControl
-            PublicKey: string
-            StartTime: DateTimeOffset
-            DoorsOpen: DateTimeOffset
-            Duration: TimeSpan
-            Event: Event
-            Profile: EventOccurrenceProfile
-        }
-        member this.GetProfile() =
-            match this.Profile with
-            | InheritedProfile -> this.Event.Profile
-            | CustomProfile profile -> profile
+    type EventOccurrence = {
+        OccurrenceId: Guid
+        VenueId: Guid
+        EventId: Guid
+        TransferRule: TransferRule
+        TransferRevocationRule: TransferRevocationRule
+        AccessControl: AccessControl
+        PublicKey: string
+        StartTime: DateTimeOffset
+        DoorsOpen: DateTimeOffset
+        Duration: TimeSpan
+        Profile: EventOccurrenceProfile
+    }
 
     type SeatLocation = 
         | SeatNumber of string
