@@ -34,6 +34,10 @@ module Commands =
         Duration: TimeSpan
     }
 
+    type CreateEventOccurrences = {
+        Occurrences: CreateEventOccurrence[]
+    }
+
     type CreateTicket = {
         TicketIdentifier: string
         TicketDescription: string option
