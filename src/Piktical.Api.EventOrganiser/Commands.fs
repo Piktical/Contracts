@@ -27,7 +27,6 @@ module Commands =
     type CreateEventOccurrence = {
         Profile: EventOccurrenceProfile
         VenueId: Guid
-        EventId: Guid
         AccessControl: AccessControl
         StartTime: DateTimeOffset
         DoorsOpen: DateTimeOffset
@@ -35,6 +34,7 @@ module Commands =
     }
 
     type CreateEventOccurrences = {
+        EventId: Guid
         Occurrences: CreateEventOccurrence[]
     }
 
