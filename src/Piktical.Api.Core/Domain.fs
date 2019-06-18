@@ -437,7 +437,6 @@ module Domain =
         TransferRule: TransferRule
         TransferRevocationRule: TransferRevocationRule
         AccessControl: AccessControl
-        PublicKey: string
         StartTime: DateTimeOffset
         DoorsOpen: DateTimeOffset
         Duration: TimeSpan
