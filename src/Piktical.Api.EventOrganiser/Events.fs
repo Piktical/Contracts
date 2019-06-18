@@ -17,10 +17,10 @@ module Events =
 
     type EventOccurrencesCreated = {
         TimestampUtc: DateTime
-        EventOccurrence: EventOccurrence[]
+        EventOccurrences: EventOccurrence[]
     }
 
     type TicketsReleased = {
-        TimeStampUtc: DateTime
+        TimestampUtc: DateTime
         ReleasedTickets: Ticket[]
     }
