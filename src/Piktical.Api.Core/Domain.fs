@@ -481,7 +481,7 @@ module Domain =
         | Reserved of ReservedSeat
 
     type EnableVerification =
-        | Never
+        | NotRequired
         | DoorsOpen
         | BeforeDoorsOpen of TimeSpan
         | AtTime of DateTimeOffset
