@@ -27,6 +27,8 @@ module Commands =
     type CreateEventOccurrence = {
         Profile: EventOccurrenceProfile
         VenueId: Guid
+        TransferRule: TransferRule
+        TransferRevocationRule: TransferRevocationRule
         AccessControl: AccessControl
         StartTime: DateTimeOffset
         DoorsOpen: DateTimeOffset
