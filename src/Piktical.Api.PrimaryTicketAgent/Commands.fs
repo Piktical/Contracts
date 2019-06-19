@@ -17,10 +17,10 @@ module Commands =
 
     type OrderBatch = {
         EventOccurrenceId: Guid
+        PriceId: Guid
         VerificationEnabled: EnableVerification
         TransferRule: TransferRule option
         TransferRevocationRule: TransferRevocationRule option
-        Price: TicketPrice
         Tickets: OrderedTicket[]
         TermsAndConditions: Uri
     }
