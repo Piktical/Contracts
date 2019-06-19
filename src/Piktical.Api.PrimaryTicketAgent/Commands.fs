@@ -9,9 +9,25 @@ module Commands =
         TicketIds: Guid[]
     }
 
+    type OrderedTicket = {
+        TicketIdentifier: string
+        TicketDescription: string option
+        Seat: Seat
+    }
+
+    type OrderBatch = {
+        EventOccurrenceId: Guid
+        VerificationEnabled: EnableVerification
+        TransferRule: TransferRule option
+        TransferRevocationRule: TransferRevocationRule option
+        Price: TicketPrice
+        Tickets: OrderedTicket[]
+        TermsAndConditions: Uri
+    }
+
     type CreateOrder = {
         OrderNumber: string
-        Tickets: Ticket[]
+        Tickets: OrderBatch[]
         Owner: PikticalUser
     }
 
