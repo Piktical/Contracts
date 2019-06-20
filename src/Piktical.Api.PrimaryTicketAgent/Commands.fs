@@ -15,7 +15,7 @@ module Commands =
         Seat: Seat
     }
 
-    type OrderBatch = {
+    type OrderGrouping = {
         EventOccurrenceId: Guid
         PriceId: Guid
         VerificationEnabled: EnableVerification
@@ -27,7 +27,7 @@ module Commands =
 
     type CreateOrder = {
         OrderNumber: string
-        TicketBatches: OrderBatch[]
+        TicketGroupings: OrderGrouping[]
         Owner: PikticalUser
     }
 
