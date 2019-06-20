@@ -27,7 +27,7 @@ module Commands =
 
     type CreateOrder = {
         OrderNumber: string
-        Tickets: OrderBatch[]
+        TicketBatches: OrderBatch[]
         Owner: PikticalUser
     }
 
