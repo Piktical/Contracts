@@ -6,6 +6,5 @@ module Events =
 
     type OrderCreated = {
         TimestampUtc: DateTime
-        UploadedById: Guid
         Order: Order
     }
