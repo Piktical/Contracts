@@ -9,7 +9,7 @@ module Commands =
         TicketIds: Guid[]
     }
 
-    type OrderedTicket = {
+    type GroupedTicket = {
         TicketIdentifier: string
         TicketDescription: string option
         Seat: Seat
