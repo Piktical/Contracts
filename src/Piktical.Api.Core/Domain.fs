@@ -354,6 +354,13 @@ module Domain =
     }
 
     [<StructuralEquality; NoComparison>]
+    type EventSecurity = {
+        SecurityId: Guid
+        Name: string
+        Logo: string option
+    }
+
+    [<StructuralEquality; NoComparison>]
     type TicketAgent = {
         AgentId: Guid
         Name: string
