@@ -21,7 +21,7 @@ module Commands =
         VerificationEnabled: EnableVerification
         TransferRule: TransferRule option
         TransferRevocationRule: TransferRevocationRule option
-        Tickets: OrderedTicket[]
+        Tickets: GroupedTicket[]
         TermsAndConditions: Uri
     }
 
