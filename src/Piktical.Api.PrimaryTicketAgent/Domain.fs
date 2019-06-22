@@ -7,7 +7,7 @@ module Domain =
     type Order = {
         OrderId: Guid
         OrderNumber: string
-        OwnerEnrolmentId: Guid
+        OwnerEnrolmentId: Guid option
         Tickets: OrderedTicket[]
         ConfirmedUtc: DateTimeOffset
         Owner: PikticalUser
