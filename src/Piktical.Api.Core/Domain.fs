@@ -525,7 +525,7 @@ module Domain =
         TicketOrderId: Guid
         SenderId: Guid
         RecipientId: Guid
-        RecipientEnrolmentId: Guid
+        RecipientEnrolmentId: Guid option
         TransferredUtc: DateTime
         Cancelled: TicketTransferCancellation option
     }
