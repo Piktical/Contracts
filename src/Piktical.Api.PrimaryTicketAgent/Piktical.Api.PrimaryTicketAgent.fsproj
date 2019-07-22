@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <PackageReference Include="NodaMoney" Version="1.0.5" />
+    <PackageReference Include="FSharp.Core" Version="4.6.2" />
   </ItemGroup>
 
   <ItemGroup>
