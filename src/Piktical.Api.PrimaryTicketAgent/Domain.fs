@@ -10,6 +10,6 @@ module Domain =
         OwnerEnrolmentId: Guid option
         Tickets: OrderedTicket[]
         ConfirmedUtc: DateTimeOffset
-        Owner: PikticalUser
+        OwnerId: Guid
         SellerProfile: SoldBy
     }

@@ -28,13 +28,13 @@ module Commands =
     type CreateOrder = {
         OrderNumber: string
         TicketGroupings: OrderGrouping[]
-        Owner: PikticalUser
+        OwnerId: Guid
     }
 
     type UpdateOrder = {
         OrderNumber: string
         Ticket: Ticket[]
-        Owner: PikticalUser
+        OwnerId: Guid
     }
 
     type CancelBookings = {

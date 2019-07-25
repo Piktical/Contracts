@@ -555,5 +555,3 @@ module Domain =
     type SoldBy =
     | SoldByAgent of TicketAgentProfile
     | SoldByReseller of ResellerProfile
-
-    type PikticalUser = | PikticalId of string
