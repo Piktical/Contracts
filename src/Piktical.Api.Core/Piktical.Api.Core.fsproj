@@ -14,6 +14,7 @@
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Version>1.0.63</Version>
     <PackageLicenseUrl />
+    <PackageVersion>1.0.64</PackageVersion>
   </PropertyGroup>
 
   <ItemGroup>

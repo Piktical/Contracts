@@ -13,6 +13,7 @@
     <Version>1.0.63</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageVersion>1.0.64</PackageVersion>
   </PropertyGroup>
 
   <ItemGroup>
