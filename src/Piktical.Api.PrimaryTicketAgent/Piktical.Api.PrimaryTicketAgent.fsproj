@@ -10,10 +10,10 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIconUrl>https://enceladusdatalive.blob.core.windows.net/assets/piktical_icon.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/Piktical/piktical-api-contracts</RepositoryUrl>
-    <Version>1.0.65</Version>
+    <Version>1.0.67</Version>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageVersion>1.0.64</PackageVersion>
+    <PackageVersion>1.0.67</PackageVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,15 +24,11 @@
 
   <ItemGroup>
     <PackageReference Include="NodaMoney" Version="1.0.5" />
-    <PackageReference Include="FSharp.Core" Version="4.6.2" />
+    <PackageReference Include="FSharp.Core" Version="4.7.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Piktical.Api.Core\Piktical.Api.Core.fsproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Update="FSharp.Core" Version="4.6.2" />
   </ItemGroup>
 
 </Project>

@@ -10,11 +10,11 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIconUrl>https://enceladusdatalive.blob.core.windows.net/assets/piktical_icon.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/Piktical/piktical-api-contracts</RepositoryUrl>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>1.0.65</Version>
+    <Version>1.0.67</Version>
     <PackageLicenseUrl />
-    <PackageVersion>1.0.64</PackageVersion>
+    <PackageVersion>1.0.67</PackageVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,11 +24,7 @@
   <ItemGroup>
     <PackageReference Include="GeographicLib.FSharp" Version="2.0.1" />
     <PackageReference Include="NodaMoney" Version="1.0.5" />
-    <PackageReference Include="FSharp.Core" Version="4.6.2" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Update="FSharp.Core" Version="4.6.2" />
+    <PackageReference Include="FSharp.Core" Version="4.7.0" />
   </ItemGroup>
 
 </Project>
