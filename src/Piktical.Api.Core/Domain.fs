@@ -392,10 +392,10 @@ module Domain =
     }
 
     type BarcodeDisplayType = 
-        | QrCode
-        | Code128
-        | Code3Of9
-        | Interleave205
+    | QrCode
+    | Code128
+    | Code3Of9
+    | Interleave205
 
     type ThirdPartyBarcode = {
         Provider: string
@@ -404,18 +404,18 @@ module Domain =
     }
 
     type AccessControl =
-        | ProvidedByPikticalApp
-        | BarCode of ThirdPartyBarcode
+    | ProvidedByPikticalApp
+    | BarCode of ThirdPartyBarcode
 
     type TransferRule =
-        | TransferToAnyone
-        | TransferToFriendsAndFamilyOnly
-        | TransferToInnerCircleOnly
-        | NotTransferable
+    | TransferToAnyone
+    | TransferToFriendsAndFamilyOnly
+    | TransferToInnerCircleOnly
+    | NotTransferable
 
     type TransferRevocationRule =
-        | CanRevokeBeforeStartTime of TimeSpan
-        | CannotRevoke
+    | CanRevokeBeforeStartTime of TimeSpan
+    | CannotRevoke
 
     type PriceType = {
         PriceTypeId: Guid
@@ -483,19 +483,21 @@ module Domain =
     }
 
     type Seat = 
-        | Unreserved
-        | Reserved of ReservedSeat
+    | Unreserved
+    | Reserved of ReservedSeat
 
-    type EnableVerification =
-        | NotRequired
-        | DoorsOpen
-        | BeforeDoorsOpen of TimeSpan
-        | AtTime of DateTimeOffset
+    type VerificationRule =
+    | FacialVerificationRequired
+    
+    type EnableBarcode=
+    | BeforeDoorsOpen of TimeSpan
+    | AtTime of DateTimeOffset
 
     type Ticket = {
         TicketId: Guid
         EventOccurrenceId: Guid
-        VerificationEnabled: EnableVerification
+        BarcodeEnabled: EnableBarcode
+        VerificationRule: VerificationRule option
         TransferRule: TransferRule option
         TransferRevocationRule: TransferRevocationRule option
         Price: TicketPrice

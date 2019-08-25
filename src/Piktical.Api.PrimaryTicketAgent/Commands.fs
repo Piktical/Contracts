@@ -18,7 +18,8 @@ module Commands =
     type OrderGrouping = {
         EventOccurrenceId: Guid
         PriceId: Guid
-        VerificationEnabled: EnableVerification
+        BarcodeEnabled: EnableBarcode
+        VerificationRule: VerificationRule option
         TransferRule: TransferRule option
         TransferRevocationRule: TransferRevocationRule option
         Tickets: GroupedTicket[]
