@@ -10,9 +10,9 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIconUrl>https://enceladusdatalive.blob.core.windows.net/assets/piktical_icon.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/Piktical/piktical-api-contracts</RepositoryUrl>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>1.0.63</Version>
+    <Version>1.0.65</Version>
     <PackageLicenseUrl />
     <PackageVersion>1.0.64</PackageVersion>
   </PropertyGroup>

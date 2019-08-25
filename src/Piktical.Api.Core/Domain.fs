@@ -453,18 +453,21 @@ module Domain =
     type SeatLocation = 
         | SeatNumber of string
         | RowSeat of string * string
+        | SectionRowSeat of string * string * string
         | BlockRowSeat of string * string * string
         | SectionBlockRowSeat of string * string * string * string
         member this.Number() =
             match this with
             | SeatNumber number -> number
             | RowSeat (_, number) -> number
+            | SectionRowSeat (_, _, number) -> number
             | BlockRowSeat (_, _, number) -> number
             | SectionBlockRowSeat (_, _, _, number) -> number
         member this.GetRow() =
             match this with
             | RowSeat (row, _) -> Some row
             | BlockRowSeat (_, row, _) -> Some row
+            | SectionRowSeat (_, row, _) -> Some row
             | SectionBlockRowSeat (_, _, row, _) -> Some row
             | _ -> None
         member this.GetBlock() =
@@ -475,6 +478,7 @@ module Domain =
         member this.GetSection() =
             match this with
             | SectionBlockRowSeat (section, _, _, _) -> Some section
+            | SectionRowSeat (section, _, _) -> Some section
             | _ -> None
 
     type ReservedSeat = {
