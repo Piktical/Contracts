@@ -390,6 +390,7 @@ module Domain =
         EventOrganiser: EventOrganiser option
         TicketAgent: TicketAgent option
         Reseller: Reseller option
+        Administrator: Administrator option
     }
 
     [<StructuralEquality; NoComparison>]
