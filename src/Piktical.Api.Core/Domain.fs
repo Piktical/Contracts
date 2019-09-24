@@ -361,6 +361,13 @@ module Domain =
     }
 
     [<StructuralEquality; NoComparison>]
+    type Administrator = {
+        AdministratorId: Guid
+        Name: string
+        Logo: string option
+    }
+
+    [<StructuralEquality; NoComparison>]
     type TicketAgent = {
         AgentId: Guid
         Name: string
