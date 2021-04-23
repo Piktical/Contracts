@@ -1,20 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <AssemblyName>Piktical.Api.Core</AssemblyName>
     <Authors>Piktical Ltd</Authors>
     <Company>Piktical Ltd</Company>
     <Product>Piktical Core API</Product>
     <PackageProjectUrl>https://github.com/Piktical/piktical-api-contracts</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageIconUrl>https://enceladusdatalive.blob.core.windows.net/assets/piktical_icon.png</PackageIconUrl>
+    <PackageIcon>icon.png</PackageIcon>
     <RepositoryUrl>https://github.com/Piktical/piktical-api-contracts</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>1.0.65</Version>
+    <Version>1.0.66</Version>
     <PackageLicenseUrl />
-    <PackageVersion>1.0.65</PackageVersion>
+    <PackageVersion>1.0.66</PackageVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,13 +21,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="GeographicLib.FSharp" Version="2.0.1" />
-    <PackageReference Include="NodaMoney" Version="1.0.5" />
-    <PackageReference Include="FSharp.Core" Version="4.6.2" />
+    <None Include="icon.png" Pack="true" PackagePath="" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Update="FSharp.Core" Version="4.6.2" />
+    <PackageReference Include="GeographicLib.FSharp" Version="2.0.1" />
+    <PackageReference Include="NodaMoney" Version="1.0.5" />
+    <PackageReference Include="FSharp.Core" Version="5.0.1" />
   </ItemGroup>
 
 </Project>

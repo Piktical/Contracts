@@ -1,19 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <AssemblyName>Piktical.Api.EventSecurity</AssemblyName>
     <Authors>Piktical Ltd</Authors>
     <Company>Piktical Ltd</Company>
     <Product>Piktical Event Security API</Product>
     <PackageProjectUrl>https://github.com/Piktical/piktical-api-contracts</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageIconUrl>https://enceladusdatalive.blob.core.windows.net/assets/piktical_icon.png</PackageIconUrl>
+    <PackageIcon>icon.png</PackageIcon>
     <RepositoryUrl>https://github.com/Piktical/piktical-api-contracts</RepositoryUrl>
-    <Version>1.0.65</Version>
+    <Version>1.0.66</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageVersion>1.0.65</PackageVersion>
+    <PackageVersion>1.0.66</PackageVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,10 +27,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FSharp.Core" Version="4.6.2" />
+    <None Include="icon.png" Pack="true" PackagePath="" />
   </ItemGroup>
+
   <ItemGroup>
-    <PackageReference Update="FSharp.Core" Version="4.6.2" />
+    <PackageReference Include="FSharp.Core" Version="5.0.1" />
   </ItemGroup>
 
 </Project>
