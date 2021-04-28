@@ -458,7 +458,7 @@ module Domain =
     | Section
     | SeatCoordinate of string
 
-    type SeatLocation = SeatCoordinates[]
+    type SeatLocation = Map<SeatCoordinates, string>
 
     type ReservedSeat = {
         Description: string option
