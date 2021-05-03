@@ -3,7 +3,7 @@ namespace Piktical.Api.Core
 module Iso3166 =
     type [<StructuralEquality; NoComparison>] ActiveCountry = { Iso31661Alpha3Code: string; Iso31661Alpha2Code: string }
     type [<StructuralEquality; NoComparison>] FormerCountry = { Iso31661Alpha3Code: string; Iso31661Alpha2Code: string; Iso31663Code: string }
-    type Country = 
+    type Country =
         | Active of ActiveCountry | Former of FormerCountry
         member this.Alpha3Code() = match this with | Active c -> c.Iso31661Alpha3Code | Former c -> c.Iso31661Alpha3Code
         member this.Alpha2Code() = match this with | Active c -> c.Iso31661Alpha2Code | Former c -> c.Iso31661Alpha2Code
@@ -289,7 +289,7 @@ module Iso3166 =
             Former { Iso31661Alpha3Code = "YMD"; Iso31661Alpha2Code = "YD"; Iso31663Code = "YDYE" }
             Former { Iso31661Alpha3Code = "YUG"; Iso31661Alpha2Code = "YU"; Iso31663Code = "YUCS" }
             Former { Iso31661Alpha3Code = "ZAR"; Iso31661Alpha2Code = "ZR"; Iso31663Code = "ZRCD" }
-        |] 
+        |]
     let CountriesByIso31661Alpha3Code = AllCountries |> Array.map (fun c -> (c.Alpha3Code(), c)) |> dict
     let CountriesByIso31661Alpha2Code = AllCountries |> Array.map (fun c -> (c.Alpha2Code(), c)) |> dict
 
@@ -391,7 +391,7 @@ module Domain =
         ClientSecret: string
     }
 
-    type BarcodeDisplayType = 
+    type BarcodeDisplayType =
     | QrCode
     | Code128
     | Code3Of9
@@ -450,49 +450,28 @@ module Domain =
         Profile: EventOccurrenceProfile
     }
 
-    type SeatLocation = 
-        | SeatNumber of string
-        | RowSeat of string * string
-        | SectionRowSeat of string * string * string
-        | BlockRowSeat of string * string * string
-        | SectionBlockRowSeat of string * string * string * string
-        member this.Number() =
-            match this with
-            | SeatNumber number -> number
-            | RowSeat (_, number) -> number
-            | SectionRowSeat (_, _, number) -> number
-            | BlockRowSeat (_, _, number) -> number
-            | SectionBlockRowSeat (_, _, _, number) -> number
-        member this.GetRow() =
-            match this with
-            | RowSeat (row, _) -> Some row
-            | BlockRowSeat (_, row, _) -> Some row
-            | SectionRowSeat (_, row, _) -> Some row
-            | SectionBlockRowSeat (_, _, row, _) -> Some row
-            | _ -> None
-        member this.GetBlock() =
-            match this with
-            | BlockRowSeat (block, _, _) -> Some block
-            | SectionBlockRowSeat (_, block, _, _) -> Some block
-            | _ -> None
-        member this.GetSection() =
-            match this with
-            | SectionBlockRowSeat (section, _, _, _) -> Some section
-            | SectionRowSeat (section, _, _) -> Some section
-            | _ -> None
+    type SeatCoordinates =
+    | SeatNumber
+    | Tier
+    | Row
+    | Block
+    | Section
+    | SeatCoordinate of string
+
+    type SeatLocation = Map<SeatCoordinates, string>
 
     type ReservedSeat = {
         Description: string option
         Location: SeatLocation
     }
 
-    type Seat = 
+    type Seat =
     | Unreserved
     | Reserved of ReservedSeat
 
     type VerificationRule =
     | FacialVerificationRequired
-    
+
     type EnableBarcode=
     | BeforeDoorsOpen of TimeSpan
     | AtTime of DateTimeOffset
@@ -536,7 +515,7 @@ module Domain =
         Cancelled: TicketTransferCancellation option
     }
 
-    type OrderedTicketStatus = 
+    type OrderedTicketStatus =
     | Purchased
     | Resold of TicketResale
     | Returned of TicketReturn

@@ -265,3 +265,5 @@ paket-files/
 *.sln.iml
 
 .DS_Store
+
+.ionide

@@ -1,19 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <AssemblyName>Piktical.Api.PrimaryTicketAgent</AssemblyName>
     <Authors>Piktical Ltd</Authors>
     <Company>Piktical Ltd</Company>
     <Product>Piktical Primary Ticket Agent API</Product>
     <PackageProjectUrl>https://github.com/Piktical/piktical-api-contracts</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageIconUrl>https://enceladusdatalive.blob.core.windows.net/assets/piktical_icon.png</PackageIconUrl>
+    <PackageIcon>icon.png</PackageIcon>
     <RepositoryUrl>https://github.com/Piktical/piktical-api-contracts</RepositoryUrl>
-    <Version>1.0.65</Version>
+    <Version>1.0.66</Version>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageVersion>1.0.65</PackageVersion>
+    <PackageVersion>1.0.66</PackageVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,15 +24,15 @@
 
   <ItemGroup>
     <PackageReference Include="NodaMoney" Version="1.0.5" />
-    <PackageReference Include="FSharp.Core" Version="4.6.2" />
+    <PackageReference Include="FSharp.Core" Version="5.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="icon.png" Pack="true" PackagePath="" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Piktical.Api.Core\Piktical.Api.Core.fsproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Update="FSharp.Core" Version="4.6.2" />
   </ItemGroup>
 
 </Project>
