@@ -12,7 +12,6 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Version>1.0.70</Version>
-    <PackageLicenseUrl />
     <PackageVersion>1.0.70</PackageVersion>
   </PropertyGroup>
 
