@@ -11,9 +11,9 @@
     <RepositoryUrl>https://github.com/Piktical/piktical-api-contracts</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>1.0.66</Version>
+    <Version>1.0.70</Version>
     <PackageLicenseUrl />
-    <PackageVersion>1.0.66</PackageVersion>
+    <PackageVersion>1.0.70</PackageVersion>
   </PropertyGroup>
 
   <ItemGroup>
